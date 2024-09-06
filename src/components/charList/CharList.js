@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useTransition } from "react";
 import PropTypes from "prop-types";
 
 import Spinner from "../spinner/Spinner";
@@ -38,10 +38,6 @@ const CharList = (props) => {
   };
 
   const itemRefs = useRef([]);
-
-  // setRef = (ref) => {
-  //   this.itemRefs.push(ref);
-  // };
 
   const focusOnItem = (id) => {
     itemRefs.current.forEach((item) => item.classList.remove("char__item_selected"));
