@@ -1,7 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 
 import "./appHeader.scss";
-import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
 
 const AppHeader = () => {
   return (
@@ -14,13 +13,13 @@ const AppHeader = () => {
       <nav className="app__menu">
         <ul>
           <li>
-            <NavLink exact activeStyle={{ color: "#9f0013" }} to="/">
+            <NavLink end style={({ isActive }) => ({ color: isActive ? "#9F0013" : "inherit" })} to="/">
               Characters
             </NavLink>
           </li>
           /
           <li>
-            <NavLink exact activeStyle={{ color: "#9f0013" }} to="/comics">
+            <NavLink end style={({ isActive }) => ({ color: isActive ? "#9F0013" : "inherit" })} to="/comics">
               Comics
             </NavLink>
           </li>
